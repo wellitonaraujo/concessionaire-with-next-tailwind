@@ -1,14 +1,17 @@
 "use client";
 
-import { useContext, useEffect, useState } from "react";
-import Image from "next/image";
-import { Link } from "react-scroll";
-import { useMediaQuery } from "react-responsive";
+import { useSearchContext } from "@/app/context/search";
 import { BiMenuAltRight, BiX } from "react-icons/bi";
-
+import { useMediaQuery } from "react-responsive";
+import { useEffect, useState } from "react";
 import SearchMobile from "../SearchMobile";
+import { Link } from "react-scroll";
+import Image from "next/image";
 
 const Header = () => {
+  // const { setSearchActive } = useContext(SearchContext);
+  const { setSearchActive } = useSearchContext();
+
   const [header, setHeader] = useState(false);
   const [nav, setNav] = useState(false);
 
@@ -19,11 +22,24 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       //header
-      if (window.screenY > 40) {
+      setHeader(window.screenY > 40);
+
+      /*  if (window.screenY > 40) {
         setHeader(true);
       } else {
         setHeader(false);
       }
+
+      */
+
+      // search
+      setSearchActive(window.screenY > 800);
+
+      /* if(window.screenY > 800) {
+         setSearchActive(true);
+        } else {
+          setSearchActive(false)
+        } */
     };
 
     // event listener
@@ -114,7 +130,7 @@ const Header = () => {
 
           <Link
             className="cursor-pointer"
-            to="testimomials"
+            to="testimonial"
             activeClass="active"
             smooth={desktopMode}
             spy={true}
