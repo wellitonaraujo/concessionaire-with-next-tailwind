@@ -64,7 +64,14 @@ const Header = () => {
           </div>
         </div>
         {/* nav*/}
-        <nav>
+        <nav
+          className={`${
+            nav ? "max-h-max py-4 xl:py-0" : "max-h-0 xl:max-h-max"
+          } flex flex-col w-full bg-white gap-y-6 overflow-hidden
+           font-bold xl:font-medium xl:flex-row xl:w-max
+            xl:gap-x-8 xl:h-max xl:bg-transparent 
+            xl:pb-0 transition-all duration-150 text-center xl:text-left uppercase text-sm xl:text-[15px] xl:normal-case `}
+        >
           <Link
             className="cursor-pointer"
             to="home"
@@ -72,7 +79,7 @@ const Header = () => {
             smooth={desktopMode}
             spy={true}
           >
-            Home
+            Inicio
           </Link>
 
           <Link
@@ -82,7 +89,7 @@ const Header = () => {
             smooth={desktopMode}
             spy={true}
           >
-            Cars
+            Carros
           </Link>
 
           <Link
@@ -92,7 +99,7 @@ const Header = () => {
             smooth={desktopMode}
             spy={true}
           >
-            About
+            Sobre
           </Link>
 
           <Link
@@ -102,7 +109,7 @@ const Header = () => {
             smooth={desktopMode}
             spy={true}
           >
-            Why us
+            Por que nós
           </Link>
 
           <Link
@@ -112,7 +119,7 @@ const Header = () => {
             smooth={desktopMode}
             spy={true}
           >
-            Testimomials
+            Depoimentos
           </Link>
 
           <Link
@@ -132,7 +139,7 @@ const Header = () => {
             smooth={desktopMode}
             spy={true}
           >
-            Ver todos os carros
+            Ver todos
           </Link>
           <SearchMobile />
         </nav>
