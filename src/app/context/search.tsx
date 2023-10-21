@@ -1,15 +1,7 @@
 "use client";
 
+import { SearchContextType, SearchProviderProps } from "@/models/searchType";
 import { useContext, createContext, useState, ReactNode } from "react";
-
-interface SearchProviderProps {
-  children: ReactNode;
-}
-
-interface SearchContextType {
-  searchActive: boolean;
-  setSearchActive: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 export const SearchContext = createContext<SearchContextType | null>(null);
 
