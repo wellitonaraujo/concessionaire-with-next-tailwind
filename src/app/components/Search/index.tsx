@@ -1,10 +1,12 @@
 "use client";
 import { useSearchContext } from "@/app/context/search";
 import LocatonSelection from "../LocatonSelection";
+import DateSelection from "../DateSelection";
 
 const Search = () => {
   //const { searchActive } = useContext(SearchContext);
   const { searchActive } = useSearchContext();
+  console.log(searchActive);
 
   return (
     <div
@@ -16,6 +18,18 @@ const Search = () => {
     >
       <div className="xl:h-full flex items-center px-6 xl:px-0 ">
         <LocatonSelection />
+        <DateSelection />
+        <div className="xl:h-full flex items-center px-6 xl:px-0">
+          <button
+            className={`${
+              searchActive
+                ? "btn btn-sm btn-accent xl:w-[164px]"
+                : "btn btn-sm btn-accent xl:w-[184px]"
+            }`}
+          >
+            Buscar
+          </button>
+        </div>
       </div>
     </div>
   );

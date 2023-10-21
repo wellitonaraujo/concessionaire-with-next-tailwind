@@ -11,7 +11,7 @@ const locations = [
 ];
 
 const LocatonSelection = () => {
-  const [location, setLocation] = useState("Selecione uma localização");
+  const [location, setLocation] = useState("Localização");
 
   return (
     <Menu as="div" className="w-full h-full flex xl:flex-row">
