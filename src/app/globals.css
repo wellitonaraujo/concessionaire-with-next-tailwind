@@ -19,10 +19,6 @@
     @apply text-4xl md-6 font-bold;
   }
 
-  .h3 {
-    @apply text-lx md-4 font-semibold;
-  }
-
   .description {
     @apply text-base xl:text-xl xl:leading-8;
   }
